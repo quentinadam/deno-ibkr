@@ -1,0 +1,26 @@
+{
+  "name": "@quentinadam/ibkr",
+  "version": "0.1.0",
+  "description": "A simple library to encode and decode ibkr strings",
+  "license": "MIT",
+  "author": "Quentin Adam",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quentinadam/deno-ibkr.git"
+  },
+  "exports": "./src/mod.ts",
+  "imports": {
+    "@quentinadam/assert": "jsr:@quentinadam/assert@^0.1.17",
+    "@quentinadam/uint8array-extension": "jsr:@quentinadam/uint8array-extension@^0.1.13",
+    "@quentinadam/zod": "jsr:@quentinadam/zod@^0.1.14",
+    "typescript": "npm:typescript@^5.9.3"
+  },
+  "fmt": {
+    "singleQuote": true,
+    "lineWidth": 120
+  },
+  "compilerOptions": {
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true
+  }
+}
