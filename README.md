@@ -138,6 +138,14 @@ The prime can be provided in two ways:
 
 ## Usage
 
+### Requirements
+
+- **Deno**: Requires Deno v2.5 or higher.
+- **Node.js**: Requires Node.js v25 or higher.
+
+This library uses `Uint8Array` methods (`toHex`, `toBase64`, `fromHex`, `fromBase64`) which are only available in Deno
+v2.5+ and Node.js v25+.
+
 ### Importing the library
 
 ```typescript
