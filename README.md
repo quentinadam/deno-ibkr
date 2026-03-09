@@ -198,3 +198,10 @@ await apiClient.request('/iserver/auth/ssodh/init', {
   },
 });
 ```
+
+[ci-image]: https://img.shields.io/github/actions/workflow/status/quentinadam/deno-ibkr/ci.yml?branch=main&logo=github&style=flat-square
+[ci-url]: https://github.com/quentinadam/deno-ibkr/actions/workflows/ci.yml
+[npm-image]: https://img.shields.io/npm/v/@quentinadam/ibkr.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/@quentinadam/ibkr
+[jsr-image]: https://jsr.io/badges/@quentinadam/ibkr?style=flat-square
+[jsr-url]: https://jsr.io/@quentinadam/ibkr
