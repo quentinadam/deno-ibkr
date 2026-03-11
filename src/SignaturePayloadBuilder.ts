@@ -11,10 +11,11 @@ export default class SignaturePayloadBuilder {
     authenticationParams: Record<string, string>;
     prepend?: string | Uint8Array<ArrayBuffer>;
   }): string {
+    const { origin, pathname, searchParams } = new URL(url);
     const parametersString = new URLSearchParams([
       ...Object.entries(authenticationParams),
-      ...new URL(url).searchParams.entries(),
+      ...searchParams.entries(),
     ].toSorted(([a], [b]) => a.localeCompare(b))).toString();
-    return `${this.#prepend}${method}&${encodeURIComponent(url)}&${encodeURIComponent(parametersString)}`;
+    return `${this.#prepend}${method}&${encodeURIComponent(origin + pathname)}&${encodeURIComponent(parametersString)}`;
   }
 }
