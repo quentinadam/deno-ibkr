@@ -1,6 +1,6 @@
 import RandomNonceGenerator from './RandomNonceGenerator.ts';
 import type RandomNonceGeneratorInterface from './RandomNonceGeneratorInterface.ts';
-import type SignaturePayloadBuilder from './SignaturePayloadBuilder.ts';
+import type BaseStringBuilder from './BaseStringBuilder.ts';
 import type Signer from './Signer.ts';
 import TimeProvider from './TimeProvider.ts';
 import type TimeProviderInterface from './TimeProviderInterface.ts';
@@ -31,7 +31,7 @@ export default class AuthenticationStringBuilder {
     url: string;
     signer: Signer;
     additionalAuthenticationParams?: Record<string, string>;
-    signaturePayloadBuiler: SignaturePayloadBuilder;
+    signaturePayloadBuiler: BaseStringBuilder;
   }): Promise<string> {
     const authenticationParams: Record<string, string> = {
       oauth_consumer_key: this.#consumerKey,

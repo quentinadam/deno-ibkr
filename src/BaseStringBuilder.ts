@@ -1,4 +1,4 @@
-export default class SignaturePayloadBuilder {
+export default class BaseStringBuilder {
   readonly #prepend: string;
 
   constructor(prepend?: string | Uint8Array<ArrayBuffer>) {
@@ -12,10 +12,15 @@ export default class SignaturePayloadBuilder {
     prepend?: string | Uint8Array<ArrayBuffer>;
   }): string {
     const { origin, pathname, searchParams } = new URL(url);
-    const parametersString = new URLSearchParams([
+    const parametersString = [
       ...Object.entries(authenticationParams),
       ...searchParams.entries(),
-    ].toSorted(([a], [b]) => a.localeCompare(b))).toString();
+    ].toSorted(([keyA, valueA], [keyB, valueB]) => {
+      if (keyA !== keyB) {
+        return keyA.localeCompare(keyB);
+      }
+      return valueA.localeCompare(valueB);
+    }).map(([key, value]) => `${key}=${value}`).join('&');
     return `${this.#prepend}${method}&${encodeURIComponent(origin + pathname)}&${encodeURIComponent(parametersString)}`;
   }
 }

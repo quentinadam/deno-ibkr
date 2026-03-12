@@ -3,7 +3,7 @@ import AuthenticationStringBuilder from './AuthenticationStringBuilder.ts';
 import RsaSha256Signer from './RsaSha256Signer.ts';
 import TimeProvider from './TimeProvider.ts';
 import RandomNonceGenerator from './RandomNonceGenerator.ts';
-import SignaturePayloadBuilder from './SignaturePayloadBuilder.ts';
+import BaseStringBuilder from './BaseStringBuilder.ts';
 
 Deno.test('AuthenticationStringBuilder', async () => {
   const vector = {
@@ -33,7 +33,7 @@ Deno.test('AuthenticationStringBuilder', async () => {
       'w+LuJGheHwVb8OY=',
       '-----END PRIVATE KEY-----',
     ].join('\n')),
-    signaturePayloadBuiler: new SignaturePayloadBuilder(
+    signaturePayloadBuiler: new BaseStringBuilder(
       'be35c67ffb0452d0547c0d929565f7d1404cef05a63b582c496e3c401fd92603',
     ),
 

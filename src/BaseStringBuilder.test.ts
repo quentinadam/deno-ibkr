@@ -1,7 +1,7 @@
 import assert from '@quentinadam/assert';
-import SignaturePayloadBuilder from './SignaturePayloadBuilder.ts';
+import BaseStringBuilder from './BaseStringBuilder.ts';
 
-Deno.test('SignaturePayloadBuilder', () => {
+Deno.test('BaseStringBuilder', () => {
   const vectors: {
     method: 'POST' | 'GET';
     url: string;
@@ -35,11 +35,11 @@ Deno.test('SignaturePayloadBuilder', () => {
         oauth_token: 'c69a36406472d1f5b6de',
       },
       payload:
-        'GET&https%3A%2F%2Fapi.ibkr.com%2Fv1%2Fapi%2Fiserver%2Fmarketdata%2Fsnapshot&conids%3D15016128%252C39453424%26fields%3D84%252C86%26oauth_consumer_key%3DZCSGTLJAN%26oauth_nonce%3D39b86f02-97c8-41ac-8578-b8103e15b096%26oauth_signature_method%3DHMAC-SHA256%26oauth_timestamp%3D1772724660%26oauth_token%3Dc69a36406472d1f5b6de',
+        'GET&https%3A%2F%2Fapi.ibkr.com%2Fv1%2Fapi%2Fiserver%2Fmarketdata%2Fsnapshot&conids%3D15016128%2C39453424%26fields%3D84%2C86%26oauth_consumer_key%3DZCSGTLJAN%26oauth_nonce%3D39b86f02-97c8-41ac-8578-b8103e15b096%26oauth_signature_method%3DHMAC-SHA256%26oauth_timestamp%3D1772724660%26oauth_token%3Dc69a36406472d1f5b6de',
     },
   ];
   for (const vector of vectors) {
-    const signaturePayloadBuilder = new SignaturePayloadBuilder(vector.prepend);
+    const signaturePayloadBuilder = new BaseStringBuilder(vector.prepend);
     assert(
       signaturePayloadBuilder.buildSignerPayload({
         method: vector.method,

@@ -6,7 +6,7 @@ import type RandomNonceGeneratorInterface from './RandomNonceGeneratorInterface.
 import type TimeProviderInterface from './TimeProviderInterface.ts';
 import type RandomBigIntGeneratorInterface from './RandomBigIntGeneratorInterface.ts';
 import type LoggerInterface from './LoggerInterface.ts';
-import SignaturePayloadBuilder from './SignaturePayloadBuilder.ts';
+import BaseStringBuilder from './BaseStringBuilder.ts';
 
 export default class ApiClient {
   readonly #sessionManager: SessionManager;
@@ -71,7 +71,7 @@ export default class ApiClient {
       method,
       headers,
       body,
-      signaturePayloadBuiler: new SignaturePayloadBuilder(),
+      signaturePayloadBuiler: new BaseStringBuilder(),
       signer: new HmacSha256Signer(Uint8Array.fromBase64(liveSessionToken)),
       signal,
       parseFn,

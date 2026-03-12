@@ -3,7 +3,7 @@ import type AuthenticationStringBuilder from './AuthenticationStringBuilder.ts';
 import type Signer from './Signer.ts';
 import ApiError from './ApiError.ts';
 import type LoggerInterface from './LoggerInterface.ts';
-import type SignaturePayloadBuilder from './SignaturePayloadBuilder.ts';
+import type BaseStringBuilder from './BaseStringBuilder.ts';
 
 export default class HttpClient {
   readonly #baseUrl: string;
@@ -35,7 +35,7 @@ export default class HttpClient {
     body?: string;
     signal?: AbortSignal;
     additionalAuthenticationParams?: Record<string, string>;
-    signaturePayloadBuiler: SignaturePayloadBuilder;
+    signaturePayloadBuiler: BaseStringBuilder;
     signer: Signer;
     parseFn: (body: unknown) => T;
   }): Promise<T> {

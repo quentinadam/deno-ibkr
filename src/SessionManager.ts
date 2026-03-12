@@ -5,13 +5,13 @@ import type HttpClient from './HttpClient.ts';
 import type TimeProviderInterface from './TimeProviderInterface.ts';
 import TimeProvider from './TimeProvider.ts';
 import type RandomBigIntGeneratorInterface from './RandomBigIntGeneratorInterface.ts';
-import SignaturePayloadBuilder from './SignaturePayloadBuilder.ts';
+import BaseStringBuilder from './BaseStringBuilder.ts';
 
 export default class SessionManager {
   readonly #httpClient: HttpClient;
   readonly #timeProvider: TimeProviderInterface;
   readonly #signer: RsaSha256Signer;
-  readonly #signaturePayloadBuilder: SignaturePayloadBuilder;
+  readonly #signaturePayloadBuilder: BaseStringBuilder;
   #liveSessionToken?: { value: string; expiration: Date };
   #liveSessionTokenPromise?: Promise<string>;
   #liveSessionTokenComputer: LiveSessionTokenComputer;
@@ -36,7 +36,7 @@ export default class SessionManager {
     this.#httpClient = httpClient;
     this.#timeProvider = timeProvider ?? new TimeProvider();
     this.#signer = new RsaSha256Signer(signaturePrivateKey);
-    this.#signaturePayloadBuilder = new SignaturePayloadBuilder(accessTokenSecret);
+    this.#signaturePayloadBuilder = new BaseStringBuilder(accessTokenSecret);
     this.#liveSessionTokenComputer = new LiveSessionTokenComputer({
       consumerKey,
       accessTokenSecret,
