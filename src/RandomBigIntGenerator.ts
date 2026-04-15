@@ -1,4 +1,4 @@
-import * as Uint8ArrayExtension from '@quentinadam/uint8array-extension';
+import { toBigUintBE } from '@quentinadam/uint8array-extension';
 import type { RandomBigIntGeneratorInterface } from './RandomBigIntGeneratorInterface.ts';
 
 export class RandomBigIntGenerator implements RandomBigIntGeneratorInterface {
@@ -15,6 +15,6 @@ export class RandomBigIntGenerator implements RandomBigIntGeneratorInterface {
       }
       return this.#randomBigInt;
     }
-    return Uint8ArrayExtension.toBigUintBE(crypto.getRandomValues(new Uint8Array(byteLength)));
+    return toBigUintBE(crypto.getRandomValues(new Uint8Array(byteLength)));
   }
 }

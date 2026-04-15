@@ -1,5 +1,5 @@
 import { assert } from '@quentinadam/assert';
-import * as Uint8ArrayExtension from '@quentinadam/uint8array-extension';
+import { fromIntBE } from '@quentinadam/uint8array-extension';
 import { DiffieHellman } from './DiffieHellman.ts';
 import type { RandomBigIntGeneratorInterface } from './RandomBigIntGeneratorInterface.ts';
 
@@ -50,7 +50,7 @@ export class LiveSessionTokenComputer {
       privateKey,
       peerPublicKey: BigInt('0x' + diffieHellmanResponse),
     });
-    const liveSessionToken = await hmacSha1(Uint8ArrayExtension.fromIntBE(secret), this.#accessTokenSecret);
+    const liveSessionToken = await hmacSha1(fromIntBE(secret), this.#accessTokenSecret);
     assert(liveSessionTokenSignature === (await hmacSha1(liveSessionToken, this.#consumerKey)).toHex());
     return { value: liveSessionToken.toBase64(), expiration: liveSessionTokenExpiration };
   }
