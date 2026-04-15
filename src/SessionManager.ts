@@ -1,13 +1,13 @@
 import * as z from '@quentinadam/zod';
-import RsaSha256Signer from './RsaSha256Signer.ts';
-import LiveSessionTokenComputer from './LiveSessionTokenComputer.ts';
-import type HttpClient from './HttpClient.ts';
-import type TimeProviderInterface from './TimeProviderInterface.ts';
-import TimeProvider from './TimeProvider.ts';
-import type RandomBigIntGeneratorInterface from './RandomBigIntGeneratorInterface.ts';
-import BaseStringBuilder from './BaseStringBuilder.ts';
+import { RsaSha256Signer } from './RsaSha256Signer.ts';
+import { LiveSessionTokenComputer } from './LiveSessionTokenComputer.ts';
+import type { HttpClient } from './HttpClient.ts';
+import type { TimeProviderInterface } from './TimeProviderInterface.ts';
+import { TimeProvider } from './TimeProvider.ts';
+import type { RandomBigIntGeneratorInterface } from './RandomBigIntGeneratorInterface.ts';
+import { BaseStringBuilder } from './BaseStringBuilder.ts';
 
-export default class SessionManager {
+export class SessionManager {
   readonly #httpClient: HttpClient;
   readonly #timeProvider: TimeProviderInterface;
   readonly #signer: RsaSha256Signer;

@@ -1,9 +1,9 @@
-import assert from '@quentinadam/assert';
-import AuthenticationStringBuilder from './AuthenticationStringBuilder.ts';
-import RsaSha256Signer from './RsaSha256Signer.ts';
-import TimeProvider from './TimeProvider.ts';
-import RandomNonceGenerator from './RandomNonceGenerator.ts';
-import BaseStringBuilder from './BaseStringBuilder.ts';
+import { assert } from '@quentinadam/assert';
+import { AuthenticationStringBuilder } from './AuthenticationStringBuilder.ts';
+import { RsaSha256Signer } from './RsaSha256Signer.ts';
+import { TimeProvider } from './TimeProvider.ts';
+import { RandomNonceGenerator } from './RandomNonceGenerator.ts';
+import { BaseStringBuilder } from './BaseStringBuilder.ts';
 
 Deno.test('AuthenticationStringBuilder', async () => {
   const vector = {

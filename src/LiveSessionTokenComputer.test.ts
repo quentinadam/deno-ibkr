@@ -1,6 +1,6 @@
-import assert from '@quentinadam/assert';
-import RandomBigIntGenerator from './RandomBigIntGenerator.ts';
-import LiveSessionTokenComputer from './LiveSessionTokenComputer.ts';
+import { assert } from '@quentinadam/assert';
+import { RandomBigIntGenerator } from './RandomBigIntGenerator.ts';
+import { LiveSessionTokenComputer } from './LiveSessionTokenComputer.ts';
 
 Deno.test('LiveSessionTokenComputer', async () => {
   const vector = {

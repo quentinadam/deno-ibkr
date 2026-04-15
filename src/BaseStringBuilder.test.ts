@@ -1,5 +1,5 @@
-import assert from '@quentinadam/assert';
-import BaseStringBuilder from './BaseStringBuilder.ts';
+import { assert } from '@quentinadam/assert';
+import { BaseStringBuilder } from './BaseStringBuilder.ts';
 
 Deno.test('BaseStringBuilder', () => {
   const vectors: {

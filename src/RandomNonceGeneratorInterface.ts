@@ -1,3 +1,3 @@
-export default interface RandomNonceGeneratorInterface {
+export interface RandomNonceGeneratorInterface {
   randomNonce(): string;
 }

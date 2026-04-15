@@ -1,6 +1,6 @@
-import type RandomNonceGeneratorInterface from './RandomNonceGeneratorInterface.ts';
+import type { RandomNonceGeneratorInterface } from './RandomNonceGeneratorInterface.ts';
 
-export default class RandomNonceGenerator implements RandomNonceGeneratorInterface {
+export class RandomNonceGenerator implements RandomNonceGeneratorInterface {
   #randomNonce?: string | (() => string);
 
   constructor(randomNonce?: string | (() => string)) {

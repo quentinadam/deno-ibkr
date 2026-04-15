@@ -1,3 +1,3 @@
-export default interface TimeProviderInterface {
+export interface TimeProviderInterface {
   now(): Date;
 }

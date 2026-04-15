@@ -1,7 +1,7 @@
 import * as Uint8ArrayExtension from '@quentinadam/uint8array-extension';
-import type RandomBigIntGeneratorInterface from './RandomBigIntGeneratorInterface.ts';
+import type { RandomBigIntGeneratorInterface } from './RandomBigIntGeneratorInterface.ts';
 
-export default class RandomBigIntGenerator implements RandomBigIntGeneratorInterface {
+export class RandomBigIntGenerator implements RandomBigIntGeneratorInterface {
   #randomBigInt?: bigint | ((byteLength: number) => bigint);
 
   constructor(randomBigInt?: bigint | ((byteLength: number) => bigint)) {

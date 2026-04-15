@@ -1,4 +1,4 @@
-export default class Signer {
+export class Signer {
   readonly #sign: (payload: Uint8Array<ArrayBuffer>) => Promise<ArrayBuffer>;
   readonly method: string;
 

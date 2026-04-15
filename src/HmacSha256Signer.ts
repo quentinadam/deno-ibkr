@@ -1,6 +1,6 @@
-import Signer from './Signer.ts';
+import { Signer } from './Signer.ts';
 
-export default class HmacSha256Signer extends Signer {
+export class HmacSha256Signer extends Signer {
   constructor(secret: Uint8Array<ArrayBuffer>) {
     super('HMAC-SHA256', async (payload) => {
       const algorithm = { name: 'HMAC', hash: 'SHA-256' };

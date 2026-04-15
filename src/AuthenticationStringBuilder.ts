@@ -1,11 +1,11 @@
-import RandomNonceGenerator from './RandomNonceGenerator.ts';
-import type RandomNonceGeneratorInterface from './RandomNonceGeneratorInterface.ts';
-import type BaseStringBuilder from './BaseStringBuilder.ts';
-import type Signer from './Signer.ts';
-import TimeProvider from './TimeProvider.ts';
-import type TimeProviderInterface from './TimeProviderInterface.ts';
+import { RandomNonceGenerator } from './RandomNonceGenerator.ts';
+import type { RandomNonceGeneratorInterface } from './RandomNonceGeneratorInterface.ts';
+import type { BaseStringBuilder } from './BaseStringBuilder.ts';
+import type { Signer } from './Signer.ts';
+import { TimeProvider } from './TimeProvider.ts';
+import type { TimeProviderInterface } from './TimeProviderInterface.ts';
 
-export default class AuthenticationStringBuilder {
+export class AuthenticationStringBuilder {
   readonly #consumerKey: string;
   readonly #accessToken: string;
   readonly #realm: string;

@@ -1,8 +1,8 @@
-import assert from '@quentinadam/assert';
-import RandomBigIntGenerator from './RandomBigIntGenerator.ts';
-import type RandomBigIntGeneratorInterface from './RandomBigIntGeneratorInterface.ts';
+import { assert } from '@quentinadam/assert';
+import { RandomBigIntGenerator } from './RandomBigIntGenerator.ts';
+import type { RandomBigIntGeneratorInterface } from './RandomBigIntGeneratorInterface.ts';
 
-export default class DiffieHellman {
+export class DiffieHellman {
   readonly prime: bigint;
   readonly generator: bigint;
   readonly #randomBigIntGenerator: RandomBigIntGeneratorInterface;

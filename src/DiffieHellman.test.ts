@@ -1,6 +1,6 @@
-import assert from '@quentinadam/assert';
-import DiffieHellman from './DiffieHellman.ts';
-import RandomBigIntGenerator from './RandomBigIntGenerator.ts';
+import { assert } from '@quentinadam/assert';
+import { DiffieHellman } from './DiffieHellman.ts';
+import { RandomBigIntGenerator } from './RandomBigIntGenerator.ts';
 
 Deno.test('DiffieHellman', () => {
   const vector = {

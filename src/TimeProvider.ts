@@ -1,6 +1,6 @@
-import type TimeProviderInterface from './TimeProviderInterface.ts';
+import type { TimeProviderInterface } from './TimeProviderInterface.ts';
 
-export default class TimeProvider implements TimeProviderInterface {
+export class TimeProvider implements TimeProviderInterface {
   readonly #now?: Date | (() => Date);
 
   constructor(now?: Date | (() => Date)) {

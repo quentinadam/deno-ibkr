@@ -1,11 +1,11 @@
 import * as z from '@quentinadam/zod';
-import type AuthenticationStringBuilder from './AuthenticationStringBuilder.ts';
-import type Signer from './Signer.ts';
-import ApiError from './ApiError.ts';
-import type LoggerInterface from './LoggerInterface.ts';
-import type BaseStringBuilder from './BaseStringBuilder.ts';
+import type { AuthenticationStringBuilder } from './AuthenticationStringBuilder.ts';
+import type { Signer } from './Signer.ts';
+import { ApiError } from './ApiError.ts';
+import type { LoggerInterface } from './LoggerInterface.ts';
+import type { BaseStringBuilder } from './BaseStringBuilder.ts';
 
-export default class HttpClient {
+export class HttpClient {
   readonly #baseUrl: string;
   readonly #authenticationStringBuilder: AuthenticationStringBuilder;
   readonly #logger?: LoggerInterface;

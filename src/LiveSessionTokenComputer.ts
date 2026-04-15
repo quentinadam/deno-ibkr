@@ -1,7 +1,7 @@
-import assert from '@quentinadam/assert';
+import { assert } from '@quentinadam/assert';
 import * as Uint8ArrayExtension from '@quentinadam/uint8array-extension';
-import DiffieHellman from './DiffieHellman.ts';
-import type RandomBigIntGeneratorInterface from './RandomBigIntGeneratorInterface.ts';
+import { DiffieHellman } from './DiffieHellman.ts';
+import type { RandomBigIntGeneratorInterface } from './RandomBigIntGeneratorInterface.ts';
 
 type MaybePromise<T> = T | Promise<T>;
 
@@ -11,7 +11,7 @@ async function hmacSha1(secret: Uint8Array<ArrayBuffer>, payload: Uint8Array<Arr
   return new Uint8Array(await crypto.subtle.sign('HMAC', key, payload));
 }
 
-export default class LiveSessionTokenComputer {
+export class LiveSessionTokenComputer {
   readonly #consumerKey: Uint8Array<ArrayBuffer>;
   readonly #accessTokenSecret: Uint8Array<ArrayBuffer>;
   readonly #diffieHellman: DiffieHellman;

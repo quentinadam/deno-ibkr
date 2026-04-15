@@ -1,4 +1,4 @@
-export default class BaseStringBuilder {
+export class BaseStringBuilder {
   readonly #prepend: string;
 
   constructor(prepend?: string | Uint8Array<ArrayBuffer>) {
