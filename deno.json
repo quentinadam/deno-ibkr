@@ -11,7 +11,7 @@
   "exports": "./src/mod.ts",
   "imports": {
     "@quentinadam/assert": "jsr:@quentinadam/assert@^0.1.17",
-    "@quentinadam/uint8array-extension": "jsr:@quentinadam/uint8array-extension@^0.1.13",
+    "@quentinadam/uint8array-extension": "jsr:@quentinadam/uint8array-extension@^0.1.18",
     "@quentinadam/zod": "jsr:@quentinadam/zod@^0.1.14",
     "typescript": "npm:typescript@^6.0.2"
   },
